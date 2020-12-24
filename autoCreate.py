@@ -17,7 +17,7 @@ class CreateProject():
         p1 = PhotoImage(file = 'logo.png')
         self.root.iconphoto(False, p1)
         self.root.title("Create New Project")
-        self.root.configure(background='black')
+        # self.root.configure(background='black')
 
         self.mainFrame = Frame(self.root)
         self.mainFrame.pack(padx = 10, pady = 10)
@@ -63,7 +63,7 @@ class CreateProject():
             self.enterButton.config(state = 'disabled')
             self.createFolders() # create the project
             self.status.config(text = 'Project Created Successfully')
-            self.root.after(20000, lambda: self.root.destroy())
+            self.root.after(12000, lambda: self.root.destroy())
         except Exception as e:
             self.enterButton.config(state = 'normal')
             self.status.config(text = e)
@@ -85,7 +85,7 @@ class CreateProject():
         os.system("echo env/ >> .gitignore")
         os.system("echo trash/ >> .gitignore")
         os.system("echo # {} >> README.md".format(self.projectName))
-        os.system('touch mainApp.py')
+        os.system('echo \'\'\'Import dependencies\'\'\' >> mainApp.py')
         os.mkdir('trash')
         os.mkdir('data')
         os.system('touch trash/notes.txt')
