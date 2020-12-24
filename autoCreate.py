@@ -54,8 +54,7 @@ class CreateProject():
         }
         with open(".vscode/settings.json", 'w', encoding='UTF-8') as ex:
             json.dump(data, ex, indent=4)
-# p = subprocess.Popen(['virtualenv.exe env'], cwd = np)
-# p.wait()
+            
 
 if __name__ == '__main__':
     po = CreateProject()
