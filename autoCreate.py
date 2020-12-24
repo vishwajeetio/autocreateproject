@@ -85,6 +85,7 @@ class CreateProject():
         os.system("echo env/ >> .gitignore")
         os.system("echo trash/ >> .gitignore")
         os.system("echo # {} >> README.md".format(self.projectName))
+        os.system('touch mainApp.py')
         os.mkdir('trash')
         os.mkdir('data')
         os.system('touch trash/notes.txt')
